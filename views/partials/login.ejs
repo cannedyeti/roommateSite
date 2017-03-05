@@ -1,0 +1,14 @@
+<% if(currentUser) { %>
+    <h3><%- currentUser.fname + " " + currentUser.lname %></h3>
+
+    <% } else { %>
+        <form method="POST" action="/auth/profile">
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="text" name="email" class="form-control" placeholder="Type your email">
+                <label for="password"></label>
+                <input type="password" name="password" class="form-control" placeholder="Type your password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+<%   } %>

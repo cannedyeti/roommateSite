@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Roommate Site</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+                <% include partials/alerts %>
+            <div class="col-xs-8 nav">
+                <a href="/" class="btn btn-primary">Home</a>
+                <% if(currentUser) { %>
+                        <a href="/auth/logout" class="btn btn-primary">Logout</a>
+                        <a href="/search" class="btn btn-primary">Search</a>
+                    <% } else { %>
+                        <a href="/auth/signup" class="btn btn-primary">Signup</a>
+                    <% } %>
+                <a href="/profile" class="btn btn-primary">Profile</a>
+            </div>
+            <div class="col-xs-4">
+                <% include partials/login %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <%- body %>
+             
+            </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+    </div>
+</body>
+
+</html>

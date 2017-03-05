@@ -1,0 +1,24 @@
+<h1>profile</h1>
+
+   <strong>User Obj: </strong><%- JSON.stringify(currentUser) %>
+
+   <h3><%- currentUser.fname + " " + currentUser.lname %></h3>
+
+   <% if (currentUser.bio) { %>
+   <p> currentUser.bio </p>
+  <% } else { %>
+    <p>You have not created a bio </p>
+    <% } %>
+
+    <h4>Interested in:</h4>
+    <% currentUser.interests %>
+      <% if (currentUser.interests) { %>
+   <p> currentUser.interests </p>
+  <% } else { %>
+    <p>You are boring as fuck </p>
+    <% } %>
+    <form action="/profile/edit" method="POST">
+      <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
+      <input type="text" name="interests" placeholder="Add Interests">
+      <input type="submit" value="add">
+    </form>
