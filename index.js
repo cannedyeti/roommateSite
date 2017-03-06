@@ -36,10 +36,19 @@ app.get("/", function(req, res) {
 });
 
 app.get("/profile", isLoggedIn, function(req, res) {
-        res.render("profile");
+        db.user.find({
+            where: { id: req.user.id },
+            include: [db.interest]
+        })
+        .then(function(user){
+            // res.send(user);
+            res.render("profile", {user: user});
+        }).catch(function(error) {
+            res.status(400).send("fuck you");
+        })
 });
 
-app.post("/profile/edit", function(req, res) {
+app.post("/profile/addInt", function(req, res) {
     var interests = [];
     // res.send(req.body)
     db.user.findById(req.body.currentUser)
@@ -50,7 +59,7 @@ app.post("/profile/edit", function(req, res) {
         if(interests.length) {
             async.forEachSeries(interests, function(i, cb) {
                 db.interest.findOrCreate({
-                    where: {interest: i.trim()}
+                    where: {interest: i.trim().toLowerCase()}
                 }).spread(function(newInt, wasCreated){
                     if(newInt) {
                         user.addInterest(newInt);
@@ -68,6 +77,10 @@ app.post("/profile/edit", function(req, res) {
         res.status(400).send("error btch");
     })
 });
+
+app.get("/profile/edit", function(req, res){
+    res.render("profileEdit");
+})
 
 // CONTROLLERS
 app.use("/auth", require("./controllers/auth"));
