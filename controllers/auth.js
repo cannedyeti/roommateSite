@@ -4,10 +4,6 @@ var passport = require("../config/passportConfig");
 var router = express.Router();
 
 // ROUTES
-router.get("/profile", function(req, res) {
-    res.render("auth/profile");
-});
-
 router.post("/profile", passport.authenticate("local", {
     successRedirect: "/",
     successFlash: "Good Job",
@@ -25,6 +21,7 @@ router.post("/signup", function(req, res) {
     db.user.findOrCreate({
         where: {
             email: req.body.email,
+            username: req.body.username
         },
         defaults: {
             fname: req.body.fname,
@@ -35,12 +32,12 @@ router.post("/signup", function(req, res) {
         if(wasCreated) {
             // GOOOOOOD
             passport.authenticate("local", {
-                successRedirect: '/',
-                successFlash: "Account create and logged in"
+                successRedirect: '/auth/signup2',
+                successFlash: "Account created and logged in, please let us know more about you."
             })(req, res);
         } else {
             // UNGOOOOOOD
-            req.flash("error", "Email was already used.");
+            req.flash("error", "Email/Username was already used.");
             res.redirect("/auth/login");
         }
     }).catch(function(err){
@@ -48,6 +45,28 @@ router.post("/signup", function(req, res) {
         res.redirect("/auth/signup");
     })
 });
+router.post("/signup2", function(req, res) {
+
+    db.user.find({
+        where: {
+            email: req.user.id,
+        },
+        defaults: {
+            gender: req.body.gender,
+            pets: req.body.pets,
+            cleanliness: req.body.cleanliness,
+            dob: req.body.dob,
+            smokes: req.body.smokes,
+            bio: req.body.bio,
+            occupation: req.body.occupation
+        }
+    })  
+});
+
+router.get("/signup2", function(req, res) {
+    res.render("auth/signup2")
+});
+
 
 router.get("/logout", function(req, res) {
     req.logout();

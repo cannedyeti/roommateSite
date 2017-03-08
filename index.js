@@ -82,6 +82,20 @@ app.get("/profile/edit", function(req, res){
     res.render("profileEdit");
 })
 
+app.post("/profile/edit", function(req, res) {
+    // res.send(req.user)
+    db.user.update({
+            smoking: req.body.smoking,
+            priceRange: req.body.price,
+            bio: req.body.bio,
+            area: req.body.area
+    }, {
+        where: {email: req.user.email}
+    }).then(function(updatedProfile) {
+        res.redirect("/profile");
+    });
+})
+
 // CONTROLLERS
 app.use("/auth", require("./controllers/auth"));
 app.use("/search", require("./controllers/search"));

@@ -1,7 +1,20 @@
-<form method="POST" action="/search">
+<h1>Personal Info</h1>
+<form method="POST" action="/profile/edit">
+    <div class="form-group">
+        <label for="bio"></label>
+        <input type="text" name="bio" class="form-control" placeholder="Tell us about you.">
+    </div>
     <div class="form-group">
         <label for="area"></label>
         <input type="text" name="area" class="form-control" placeholder="Where are you looking to live?" required>
+    </div>
+    <div class="form-group">
+        <select name="price" id = "priceRange">
+            <option value = "1">Prefer not to say</option>
+            <option value = "2">Male</option>
+            <option value = "3">Female</option>
+        </select>
+        <label for="price">What do you identify as?</label>
     </div>
     <div class="form-group">
         <select name="price" id = "priceRange">
@@ -12,8 +25,8 @@
             <option value = "5"> > $801</option>
         </select>
         <label for="price">What can you pay per month?</label>
-        </div>
-        <div class="form-group">
+     </div>
+    <div class="form-group">
         <select name="smoking" id = "smoking">
             <option value = "0">Non-Smoking</option>
             <option value = "1">Smoking</option>
@@ -23,4 +36,4 @@
         <div class="form-group">
     </div>
     <input type="submit">
-</form>
+    </form>

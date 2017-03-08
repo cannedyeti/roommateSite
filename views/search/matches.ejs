@@ -1,0 +1,9 @@
+<h1>Results</h1>
+<h3><% matches.forEach(function(t) { %>
+    <h3><%= t.fname %> <%= t.lname %></h3>
+    <p><%= t.bio %></p>
+    <h5>interested in:</h5>
+    <% t.interests.forEach(function(i) { %>
+        <p><%= i.interest %></p>
+    <% }) %>
+<% }) %></h3>

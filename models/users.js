@@ -22,7 +22,16 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    bio: DataTypes.TEXT
+    bio: DataTypes.TEXT,
+    area: DataTypes.STRING,
+    smokes: DataTypes.INTEGER,
+    priceRange: DataTypes.INTEGER,
+    dob: DataTypes.DATE,
+    gender: DataTypes.INTEGER,
+    username: DataTypes.STRING,
+    pets: DataTypes.STRING,
+    cleanliness: DataTypes.INTEGER,
+    occupation: DataTypes.STRING
   }, {
     hooks: {
       beforeCreate: function(createdUser, options, cb){

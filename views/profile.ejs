@@ -3,25 +3,37 @@
    <h1><%- currentUser.fname + " " + currentUser.lname %></h1>
 
    <% if (currentUser.bio) { %>
-   <p> currentUser.bio </p>
+   <p> <%= currentUser.bio %></p>
   <% } else { %>
     <p>You have not created a bio </p>
     <% } %>
-    <a href="/profile/edit" class="btn btn-info btn-xs">edit</a>
-
+    <% if(currentUser.area) { %>
+      <h4>Prefers to live in:</h4>
+      <p> <%= currentUser.area %></p>
+  <%} else { %> 
+      Please set up preferences!
+  <%}%>
+  <% if(currentUser.smoking) { %>
+      <h5>Prefers <% if(currentUser.smoking == 0) { %>
+        Non Smoking
+      <% } else { Smoking } %> Roommate</h5>
+  <%}%>
     <h4>Interested in:</h4>
     <% currentUser.interests %>
       <% if (user.interests) { %>
          <% user.interests.forEach(function(interest) { %>
-          <span>| <%= interest.interest %> |</span>
+          <span><%= interest.interest %> </span>
 
        <% }) %>
   <% } else { %>
     <p>You are boring as fuck </p>
     <% } %>
+    <br >
     <form action="/profile/addInt" method="POST">
       <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
       <input type="text" name="interests" placeholder="Add Interests">
       <input type="submit" value="add">
     </form>
+    <br>
+    <a href="/profile/edit" class="btn btn-info btn-xs">edit</a>
 
