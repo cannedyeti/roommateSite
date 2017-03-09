@@ -1,9 +1,27 @@
-<h1>Results</h1>
-<h3><% matches.forEach(function(t) { %>
-    <h3><%= t.fname %> <%= t.lname %></h3>
-    <p><%= t.bio %></p>
-    <h5>interested in:</h5>
-    <% t.interests.forEach(function(i) { %>
-        <p><%= i.interest %></p>
+<div class="col-xs-10 col-xs-offset-1 page">
+    <h1>Results</h1>
+        <div class="row">
+        </div>
+        <% matches.forEach(function(t) { %>
+        <div class="row">
+        <div class="col-xs-6">
+        <h3><%= t.fname %> <%= t.lname %></h3>
+        <h5><a href="/profile/<%= t.id %>"> View Profile</a></h5>
+        </div>
+        <div class="col-xs-3">
+        <p><%= t.bio %></p>
+        </div>
+        <div class="col-xs-3">
+        <h5>Interested in:</h5>
+        <% t.interests.forEach(function(i) { %>
+            <span class="btn btn-success btn-xs"> <%= i.interest %></span>
+        <% }) %>
+    
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        </div>
     <% }) %>
-<% }) %></h3>
+</div>

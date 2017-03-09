@@ -13,12 +13,12 @@ router.post("/", function(req, res) {
         where: {
             smokes: req.body.smoking,
             priceRange: req.body.price,
+            area: req.body.area,
             id: {
                 $notIn: [req.user.id]
             }
         }, include: [db.interest]
     }).then(function(matches) {
-        // res.send(matches);
         res.render("search/matches", {matches: matches});
     })
 

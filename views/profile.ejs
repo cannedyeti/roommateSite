@@ -1,39 +1,90 @@
+<div class="col-xs-8 col-xs-offset-2 page">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1><%- currentUser.fname + " " + currentUser.lname %></h1>
+    </div>
+    <div class="col-xs-2">
+      <a href="/profile/edit" class="btn btn-info">Edit profile</a>
+    </div>
+  </div>
+  <br>
+  <div class="bio col-xs-7">
+      <% if (currentUser.bio) { %>
+        <p> <%= currentUser.bio %></p>
+      <% } else { %>
+        <p>You have not created a bio </p>
+      <% } %>
+      <br>
+      <div class="interests">
+        <h4>Interested in:</h4>
+        <% currentUser.interests %>
+          <% if (user.interests) { %>
+            <% user.interests.forEach(function(interest) { %>
+              <span><a href="/profile/del/<%= interest.id %>" class="btn btn-sm delete-int"><i class="fa fa-trash" aria-hidden="true"></i> <%= interest.interest %></a></span>
 
 
-   <h1><%- currentUser.fname + " " + currentUser.lname %></h1>
-
-   <% if (currentUser.bio) { %>
-   <p> <%= currentUser.bio %></p>
-  <% } else { %>
-    <p>You have not created a bio </p>
-    <% } %>
-    <% if(currentUser.area) { %>
-      <h4>Prefers to live in:</h4>
-      <p> <%= currentUser.area %></p>
-  <%} else { %> 
-      Please set up preferences!
-  <%}%>
-  <% if(currentUser.smoking) { %>
-      <h5>Prefers <% if(currentUser.smoking == 0) { %>
-        Non Smoking
-      <% } else { Smoking } %> Roommate</h5>
-  <%}%>
-    <h4>Interested in:</h4>
-    <% currentUser.interests %>
-      <% if (user.interests) { %>
-         <% user.interests.forEach(function(interest) { %>
-          <span><%= interest.interest %> </span>
-
-       <% }) %>
-  <% } else { %>
-    <p>You are boring as fuck </p>
-    <% } %>
-    <br >
+          <% }) %>
+        <% } else { %>
+          <p>No interests? You boring bastard. </p>
+        <% } %>
     <form action="/profile/addInt" method="POST">
       <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
-      <input type="text" name="interests" placeholder="Add Interests">
-      <input type="submit" value="add">
+      <input type="text" class="input" name="interests" placeholder="Add Interests">
+      <input type="submit" value="add" class="btnlight">
     </form>
-    <br>
-    <a href="/profile/edit" class="btn btn-info btn-xs">edit</a>
+      </div>
+  </div>
+  <div class="profileMoreInfo col-xs-4 well">
+    <div class="area">
+      <% if(currentUser.area) { %>
+        <h4>Prefers to live in</h4>
+        <p> <%= currentUser.area %></p>
+      <%} else { %> 
+        Please set up preferences!
+      <%}%>
+    </div>
+    <div class="smoking">
+      <% if(currentUser.smokes == 0 || currentUser.smokes == 1) { %>
+          <h4>Smokes</h4>
+          <% if(currentUser.smokes == 0) { %>
+            No
+          <% } else { Yes }; %>
+      <%}%>
+    </div>
+    <div class="dob">
+      <% if (currentUser.dob) { %>
+        <h4>Birthday <i class="fa fa-birthday-cake" aria-hidden="true"></i></h4>
+        <%= currentUser.dob.getMonth() + 1 %>-<%= currentUser.dob.getDate() + 1 %>-<%= currentUser.dob.getFullYear() %>
+      <% } %>
+    </div>
+    <div class="occupation">
+      <% if (currentUser.occupation) { %>
+        <h4>Occupation</h4>
+        <%= currentUser.occupation %>
+      <% } %>
+    </div>
+    <div class="pets">
+      <% if (currentUser.pets) { %>
+        <h4>Pets</h4>
+        <%= currentUser.pets %>
+      <% } %>
+    </div>
+    <div class="gender">
+    <% if (currentUser.cleanliness) { %>
+      <h4>Cleanliness (1-10)</h4>
+      <%= currentUser.cleanliness %>
+    <% } %>
+      <% if (currentUser.gender) { %>
+      <h4>Gender</h4>
+      <% if (currentUser.gender == 0){ %>
+        Prefer not to say
+    <% } else if (currentUser.gender == 1) { %>
+        Male
+      <% } else { %>
+        Female
+      <% }} %>
+      </div>
+    </div>
+    <br >
 
+</div>

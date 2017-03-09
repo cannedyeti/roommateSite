@@ -1,3 +1,190 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.row {
+    margin: 0;
+}
+
+
 .nav { 
+    margin-top: 12px;
+    text-align: center;
+}
+
+.nav a {
+    
+}
+
+.topRow {
+    padding-top: 40px;
+    min-height: 90vh;
+}
+
+.img{
+    height: 85vh;
+    width: 100vw;
+    margin-left: -15px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("http://az616578.vo.msecnd.net/files/2016/03/22/635942268725192062-510663098_bigstock-Group-of-students-having-fun-o-62076881.jpg")
+}
+
+
+
+.header {
+    position: fixed;
+    width: 100%;
+    background: #505160;
+    padding: 0 0 10px 0;
+    color:#68829e;
+    z-index: 1;
+    margin-left: 0px;
+}
+
+.page {
     margin-top: 20px;
+}
+
+body{
+    background-color:#c9c9c9;
+}
+
+.btngrey {
+    background: #505160;
+    color: #68829e;
+    border-color: #68829e;
+    border: 2px solid;
+    border-radius: 0;
+}
+
+.btnlight {
+    background: #c9c9c9;
+    color: #68829e;
+    border-color: #68829e;
+    border: 2px solid;
+    border-radius: 0;
+}
+.btnwhite {
+    background: white;
+    color: #68829e;
+    border-color: #68829e;
+    border: 2px solid;
+    border-radius: 0;
+}
+
+.btngrey:hover {
+    background: #68829e;
+    color: #505160;
+    border-color: #68829e;
+}
+
+.btnlight:hover {
+    background: #68829e;
+    border-color: #68829e;
+    color: #c9c9c9;
+}
+
+
+.btnwhite:hover {
+    background: #68829e;
+    color: white;
+    border-color: #68829e;
+}
+.login-form {
+    margin-top: 9px;
+}
+
+input.btn {
+    width: 50px;
+}
+
+input {
+    display: inline-block;
+    width: 130px;
+}
+
+#pass {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #aebd38;
+    margin-top: 5px;
+    text-align: center;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #aebd38 inset;
+}
+
+.bottomRow {
+    height: 75px;
+    background: darkgrey;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bottomRow i {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.homeLogo {
+    height: 13vh;
+    background-color: #c9c9c9;
+    color: black;
+    font-size: 70px;
+    text-align: center;
+}
+
+.homeLogin {
+    margin-top: 10px;
+}
+
+.homeLogo p {
+    margin-top: 10px;
+}
+
+.login {
+    flex: 1;
+}
+
+.logoNav {
+    font-size: 35px;
+    color: white;
+    margin-top: 4px;
+}
+
+.signupWell label{
+    color: black;
+}
+
+.delete-int {
+    border: 1px solid #68829e;
+    color: #505160;
+    background-color: lightgrey;
+}
+.delete-int:hover {
+    border: none;
+    color: black;
+    background-color: #aebd38;
+}
+
+.profileMoreInfo h4 {
+    text-decoration: underline;
+}
+
+.input {
+
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn-info {
+    margin-top: 30px;
 }

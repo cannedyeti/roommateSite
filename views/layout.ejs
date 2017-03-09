@@ -6,41 +6,46 @@
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/js/main.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-                <% include partials/alerts %>
-            <div class="col-xs-8 nav">
-                <a href="/" class="btn btn-primary">Home</a>
-                <% if(currentUser) { %>
-                        <a href="/auth/logout" class="btn btn-primary">Logout</a>
-                        <a href="/search" class="btn btn-primary">Search</a>
-                    <% } else { %>
-                        <a href="/auth/signup" class="btn btn-primary">Signup</a>
-                    <% } %>
-                <a href="/profile" class="btn btn-primary">Profile</a>
-            </div>
-            <div class="col-xs-4">
-                <% include partials/login %>
-            </div>
+        <div class="header row">
+        <div class="logoNav col-xs-1">
+        <i class="fa fa-bed" aria-hidden="true"></i>
         </div>
-        <div class="row">
+            <div class="nav nav-center col-xs-5">
+                <a href="/" class="btn btngrey">Home</a>
+                <% if(currentUser) { %>
+                        <a href="/auth/logout" class="btn btngrey">Logout</a>
+                        <a href="/search" class="btn btngrey">Search</a>
+                    <% } else { %>
+                        <a href="/auth/signup" class="btn btngrey">Signup</a>
+                    <% } %>
+                <a href="/profile" class="btn btngrey">Profile</a>
+            </div>
+                <% include partials/login %>
+
+        </div>
+        <div class="row topRow">
             <div class="col-xs-12">
                 <%- body %>
              
             </div>
         </div>
 
-        <div class="row">
-
+        <div class="row bottomRow">
+            <div class="col-xs-12">
+                <i class="fa fa-github" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </div>
         </div>
 
-    </div>
 </body>
 
 </html>

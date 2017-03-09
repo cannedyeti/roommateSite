@@ -1,0 +1,34 @@
+
+
+   <h1><%- user.fname + " " + user.lname %></h1>
+
+   <% if (user.bio) { %>
+   <p> <%= user.bio %></p>
+  <% } else { %>
+    <p>You have not created a bio </p>
+    <% } %>
+    <% if(user.area) { %>
+      <h4>Prefers to live in:</h4>
+      <p> <%= user.area %></p>
+  <%} else { %> 
+      <%- user.fname + " " + user.lname %> has not set up preferences.
+  <%}%>
+  <% if(user.smoking) { %>
+      <h5>Prefers <% if(user.smoking == 0) { %>
+        Non Smoking
+      <% } else { Smoking } %> Roommate</h5>
+  <%}%>
+    <h4>Birthday</h4>
+    <%= user.dob.getMonth() + 1 %>-<%= user.dob.getDate() + 1 %>-<%= user.dob.getFullYear() %>
+    <h4>Interested in:</h4>
+    <% user.interests %>
+      <% if (user.interests != "") { %>
+         <% user.interests.forEach(function(interest) { %>
+          <span class="btn btn-success btn-xs"> <%= interest.interest %></span>
+
+       <% }) %>
+  <% } else { %>
+    <p><%- user.fname + " " + user.lname %> is boring as fuck</p>
+    <% } %>
+
+

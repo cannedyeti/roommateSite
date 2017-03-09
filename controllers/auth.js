@@ -45,13 +45,12 @@ router.post("/signup", function(req, res) {
         res.redirect("/auth/signup");
     })
 });
-router.post("/signup2", function(req, res) {
 
-    db.user.find({
-        where: {
-            email: req.user.id,
-        },
-        defaults: {
+router.post("/signup2", function(req, res) {
+    // res.send(req.body)
+        db.user.update({
+            priceRange:req.body.price,
+            area: req.body.area,
             gender: req.body.gender,
             pets: req.body.pets,
             cleanliness: req.body.cleanliness,
@@ -59,9 +58,13 @@ router.post("/signup2", function(req, res) {
             smokes: req.body.smokes,
             bio: req.body.bio,
             occupation: req.body.occupation
-        }
-    })  
+    }, {
+        where: {email: req.user.email}
+    }).then(function(updatedProfile) {
+        res.redirect("/profile");
+    });
 });
+    
 
 router.get("/signup2", function(req, res) {
     res.render("auth/signup2")
