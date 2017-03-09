@@ -5,8 +5,12 @@
     
 </div>
 
-<div class="row">
+<div class="row rowHome">
+<% if (currentUser) {%> 
+<div class="col-xs-6 text-center col-xs-offset-3">
+<%} else {%>
 <div class="col-xs-5 col-xs-offset-1">
+<% }%>
 <br><br>
     <h3 class="text-center">Tired of getting roommates who blow?</h3>
     <br>
@@ -16,6 +20,7 @@
      dating. We don't think one should spend their time at home with a roommate they don't get along with. That's where we come in.</p>
 </div>
 <div class="col-xs-5 text-center">
+<% if (!currentUser) { %>
 <div class="well homeLogin">
 <h4>Don't have an account? Sign up now!</h4>
 <form method="POST" action="/auth/signup">
@@ -41,6 +46,7 @@
     </div>
     <input type="submit" class="btnwhite">
 </form>
+<%}%>
 </div>
 </div>
 </div>

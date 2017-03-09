@@ -50,7 +50,7 @@ router.post("/signup2", function(req, res) {
     // res.send(req.body)
         db.user.update({
             priceRange:req.body.price,
-            area: req.body.area,
+            area: req.body.area.toLowerCase(),
             gender: req.body.gender,
             pets: req.body.pets,
             cleanliness: req.body.cleanliness,

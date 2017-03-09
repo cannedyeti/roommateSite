@@ -13,7 +13,7 @@ router.post("/", function(req, res) {
         where: {
             smokes: req.body.smoking,
             priceRange: req.body.price,
-            area: req.body.area,
+            area: req.body.area.toLowerCase(),
             id: {
                 $notIn: [req.user.id]
             }

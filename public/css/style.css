@@ -188,3 +188,23 @@ input:-webkit-autofill {
 .btn-info {
     margin-top: 30px;
 }
+
+.results {
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid white;
+}
+.resultLabel {
+    border-bottom: 1px solid white;
+}
+.rowHome {
+    margin-bottom: 20px;
+}
+
+.intForm {
+    position: absolute;
+    bottom: 0;
+}
+
+.interests {
+    min-height: 300px;
+}

@@ -1,34 +1,80 @@
-
-
-   <h1><%- user.fname + " " + user.lname %></h1>
-
-   <% if (user.bio) { %>
-   <p> <%= user.bio %></p>
-  <% } else { %>
-    <p>You have not created a bio </p>
+<div class="col-xs-8 col-xs-offset-2 page">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1><%- user.fname + " " + user.lname %></h1>
+    </div>
+  </div>
+  <br>
+  <div class="bio col-xs-7">
+      <% if (user.bio) { %>
+        <p> <%= user.bio %></p>
+      <% } else { %>
+        <p><%=user.fname %> has not created a bio </p>
+      <% } %>
+      <br>
+      <div class="interests">
+        <h4>Interested in:</h4>
+        <% user.interests %>
+          <% if (user.interests) { %>
+            <% user.interests.forEach(function(interest) { %>
+              <span class="btn btn-sm delete-int"><%= interest.interest %></span>
+          <% }) %>
+        <% } else { %>
+          <p><%=user.fname %> has no interests</p>
+        <% } %>
+      </div>
+  </div>
+  <div class="profileMoreInfo col-xs-4 well">
+    <div class="area">
+      <% if(user.area) { %>
+        <h4>Prefers to live in</h4>
+        <p> <%= user.area %></p>
+      <%} else { %> 
+        <%=user.fname %> has not set preferences
+      <%}%>
+    </div>
+    <div class="smoking">
+      <% if(user.smokes == 0 || user.smokes == 1) { %>
+          <h4>Smokes</h4>
+          <% if(user.smokes == 0) { %>
+            No
+          <% } else { Yes }; %>
+      <%}%>
+    </div>
+    <div class="dob">
+      <% if (user.dob) { %>
+        <h4>Birthday <i class="fa fa-birthday-cake" aria-hidden="true"></i></h4>
+        <%= user.dob.getMonth() + 1 %>-<%= user.dob.getDate() + 1 %>-<%= user.dob.getFullYear() %>
+      <% } %>
+    </div>
+    <div class="occupation">
+      <% if (user.occupation) { %>
+        <h4>Occupation</h4>
+        <%= user.occupation %>
+      <% } %>
+    </div>
+    <div class="pets">
+      <% if (user.pets) { %>
+        <h4>Pets</h4>
+        <%= user.pets %>
+      <% } %>
+    </div>
+    <div class="gender">
+    <% if (user.cleanliness) { %>
+      <h4>Cleanliness (1-10)</h4>
+      <%= user.cleanliness %>
     <% } %>
-    <% if(user.area) { %>
-      <h4>Prefers to live in:</h4>
-      <p> <%= user.area %></p>
-  <%} else { %> 
-      <%- user.fname + " " + user.lname %> has not set up preferences.
-  <%}%>
-  <% if(user.smoking) { %>
-      <h5>Prefers <% if(user.smoking == 0) { %>
-        Non Smoking
-      <% } else { Smoking } %> Roommate</h5>
-  <%}%>
-    <h4>Birthday</h4>
-    <%= user.dob.getMonth() + 1 %>-<%= user.dob.getDate() + 1 %>-<%= user.dob.getFullYear() %>
-    <h4>Interested in:</h4>
-    <% user.interests %>
-      <% if (user.interests != "") { %>
-         <% user.interests.forEach(function(interest) { %>
-          <span class="btn btn-success btn-xs"> <%= interest.interest %></span>
+      <% if (user.gender) { %>
+      <h4>Gender</h4>
+      <% if (user.gender == 0){ %>
+        Prefer not to say
+    <% } else if (user.gender == 1) { %>
+        Male
+      <% } else { %>
+        Female
+      <% }} %>
+      </div>
+    </div>
+    <br >
 
-       <% }) %>
-  <% } else { %>
-    <p><%- user.fname + " " + user.lname %> is boring as fuck</p>
-    <% } %>
-
-
+</div>

@@ -70,6 +70,7 @@ router.post("/edit", function(req, res) {
     // res.send(req.user)
     db.user.update({
             priceRange:req.body.price,
+            area:req.body.area.toLowerCase(),
             gender: req.body.gender,
             pets: req.body.pets,
             cleanliness: req.body.cleanliness,

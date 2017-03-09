@@ -27,11 +27,11 @@
         <% } else { %>
           <p>No interests? You boring bastard. </p>
         <% } %>
-    <form action="/profile/addInt" method="POST">
-      <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
-      <input type="text" class="input" name="interests" placeholder="Add Interests">
-      <input type="submit" value="add" class="btnlight">
-    </form>
+        <form class="intForm" action="/profile/addInt" method="POST">
+          <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
+          <input type="text" class="input" name="interests" placeholder="Add Interests">
+          <input type="submit" value="add" class="btnlight">
+        </form>
       </div>
   </div>
   <div class="profileMoreInfo col-xs-4 well">
