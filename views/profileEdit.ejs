@@ -3,11 +3,11 @@
 <form method="POST" action="/auth/signup2">
     <div class="form-group">
         <label for="bio"></label>
-        <input type="text" name="bio" value="<%= currentUser.bio %>" class="form-control" placeholder="Tell us about you.">
+        <input type="textarea" name="bio" value="<%= currentUser.bio %>" class="form-control" placeholder="Tell us about you.">
     </div>
     <div class="form-group">
-        <label for="area"></label>
-        <input type="text" name="area" class="form-control" value="<%= currentUser.area %>" placeholder="Where are you looking to live?">
+        <input type="text" class="input" name="area" class="form-control" value="<%= currentUser.area %>" placeholder="Where are you looking to live?">
+        <label for="area"> Where would you like to live?</label>
     </div>
     <div class="form-group">
         <select name="gender" id = "gender">
@@ -15,7 +15,7 @@
             <option value = "1">Male</option>
             <option value = "2">Female</option>
         </select>
-        <label for="price">What do you identify as?</label>
+        <label for="price">Gender</label>
     </div>
     <div class="form-group">
         <select name="price" id = "priceRange">
@@ -40,16 +40,16 @@
             <option value = "9">9</option>
             <option value = "10">10</option>
         </select>
-        <label for="price">How clean are you?</label>
+        <label for="cleanliness">How clean are you?</label>
     </div>
     <div class="form-group">
         <label for="pets"></label>
-        <input type="text" name="pets" value="<%= currentUser.pets %>" class="form-control" placeholder="What kind of pets do you have?">
+        <input type="textarea" name="pets" value="<%= currentUser.pets %>" class="form-control" placeholder="What kind of pets do you have?">
     </div>
     <div class="form-group">
-        <select name="smokes" id = "smokes">
-            <option value = "0">No</option>
-            <option value = "1">Yes</option>
+        <select name="smokes" id ="smokes">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
         </select>
         <label for="smoking">Do you smoke?</label>
     </div>
@@ -63,6 +63,6 @@
         </select>
         <label for="occupation">What do you do?</label>
     </div>
-    <input type="submit">
+    <input type="submit" class="btnlight">
     </form>
 </div>
