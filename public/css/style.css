@@ -17,8 +17,9 @@
 }
 
 .topRow {
-    padding-top: 10px;
+    padding-top: 50px;
     min-height: 95vh;
+
 }
 
 .img{
@@ -28,10 +29,13 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("http://az616578.vo.msecnd.net/files/2016/03/22/635942268725192062-510663098_bigstock-Group-of-students-having-fun-o-62076881.jpg")
+    background-image: url("../img/banner.jpg")
 }
 
-
+.fa-arrow-circle-o-down {
+    font-size: 50px;
+    color: #505160;
+}
 
 .header {
     position: fixed;
@@ -131,17 +135,41 @@ input:-webkit-autofill {
 }
 
 .imgLogo {
-    font-size: 65px;
     text-align: center;
 }
-
-/*.homeLogo {
-    height: 13vh;
-    background-color: #c9c9c9;
-    color: black;
+.imgLogo p {
+    background-color: rgba(0,0,0,.8);
+    font-size: 130px;
+    color: white;
+    padding-bottom: 40vh;
+    padding-top: 31vh;
+}
+.homeDown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
     font-size: 70px;
-    text-align: center;
-}*/
+    border: 1px solid white;
+    border-radius: 65%;
+    width: 70px;
+    height: 70px;
+}
+
+.profileDown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #505160;
+    font-size: 50px;
+    border: 1px solid #505160;
+    border-radius: 65%;
+    width: 50px;
+    height: 50px;
+}
+
+
+
 
 .homeLogin {
     margin-top: 10px;
@@ -185,7 +213,7 @@ input:-webkit-autofill {
 }
 
 .input {
-
+    width: 200px;
     height: 30px;
     border-radius: 10px;
     border: none;
@@ -216,4 +244,8 @@ input:-webkit-autofill {
 
 .interests {
     min-height: 300px;
+}
+.important {
+    border: 1px solid #aebd38;
+    width: 200px;
 }

@@ -16,22 +16,22 @@
       <% } %>
       <br>
       <div class="interests">
-        <h4>Interested in:</h4>
-        <% currentUser.interests %>
+          <h4>Interested in:</h4>
           <% if (user.interests) { %>
             <% user.interests.forEach(function(interest) { %>
               <span><a href="/profile/del/<%= interest.id %>" class="btn btn-sm delete-int"><i class="fa fa-trash" aria-hidden="true"></i> <%= interest.interest %></a></span>
-
-
           <% }) %>
-        <% } else { %>
-          <p>No interests? You boring bastard. </p>
+        <% } else if (user.interests == 0) { %>
+          <h3>Add interests below! It'll help other users get to know you.</h3>
         <% } %>
         <form class="intForm" action="/profile/addInt" method="POST">
           <input type="hidden" name="currentUser" value="<%= currentUser.id %>">
-          <input type="text" class="input" name="interests" placeholder="Add Interests">
+          <input type="text" width="100px" class="input important" name="interests" placeholder="Add Interests">
           <input type="submit" value="add" class="btnlight">
-        </form>
+          <% if (user.interests == 0) { %>
+          <h5>Add interests here. It'll help other users get to know you. Click on interests to delete them.</h5>
+        <% } %>
+        </form> 
       </div>
   </div>
   <div class="profileMoreInfo col-xs-4 well">
@@ -88,5 +88,37 @@
       </div>
     </div>
     <br >
-
 </div>
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      <i id="profileDown" class="fa fa-angle-double-down profileDown" aria-hidden="true"></i>
+    </div>
+  <div class="col-xs-8 col-xs-offset-2 page">
+  <h3 id="info">Start searching for a new roomie!</h3>
+  <hr>
+  <form method="POST" action="/search">
+      <div class="form-group">
+          <label for="area"></label>
+          <input type="text" name="area" class="form-control" placeholder="Which city shall we search?" required>
+      </div>
+      <div class="form-group">
+          <select name="price" id = "priceRange">
+              <option value = "1"> < $500</option>
+              <option value = "2">$500 - $600</option>
+              <option value = "3">$601 - $700</option>
+              <option value = "4">$701 - $800</option>
+              <option value = "5"> > $801</option>
+          </select>
+          <label for="price" class="label">What can you pay per month?</label>
+          </div>
+          <div class="form-group">
+          <select name="smoking" id = "smoking">
+              <option value = "0">Non-Smoking</option>
+              <option value = "1">Smoking</option>
+          </select>
+          <label for="smoking" class="label">Smoking Preference</label>
+          </div>
+          <div class="form-group">
+      </div>
+      <input type="submit" class="btnlight">
+  </form>
+  </div>

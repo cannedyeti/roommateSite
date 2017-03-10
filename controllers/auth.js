@@ -5,7 +5,7 @@ var router = express.Router();
 
 // ROUTES
 router.post("/profile", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/profile",
     successFlash: "Good Job",
     failureRedirect: "/",
     failureFlash: "Invalid Credentials"
