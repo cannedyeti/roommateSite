@@ -5,23 +5,17 @@
 .row {
     margin: 0;
 }
-
-
 .nav { 
     margin-top: 12px;
     text-align: center;
 }
-
 .nav a {
     
 }
-
 .topRow {
     padding-top: 50px;
     min-height: 95vh;
-
 }
-
 .img{
     height: 95vh;
     width: 100vw;
@@ -31,12 +25,10 @@
     background-size: cover;
     background-image: url("../img/banner.jpg")
 }
-
 .fa-arrow-circle-o-down {
     font-size: 50px;
     color: #505160;
 }
-
 .header {
     position: fixed;
     width: 100%;
@@ -46,7 +38,6 @@
     z-index: 1;
     margin-left: 0px;
 }
-
 .page {
     margin-top: 60px;
 }
@@ -98,6 +89,8 @@ body{
 }
 .login-form {
     margin-top: 9px;
+    margin-left: auto;
+    
 }
 
 input.btn {
@@ -113,7 +106,7 @@ input {
     height: 30px;
     border-radius: 10px;
     border: none;
-    background-color: #aebd38;
+    background-color: white;
     margin-top: 5px;
     text-align: center;
 }
@@ -146,7 +139,7 @@ input:-webkit-autofill {
 }
 .homeDown {
     position: absolute;
-    left: 50%;
+    left: 47%;
     top: 50%;
     color: white;
     font-size: 70px;
@@ -167,10 +160,6 @@ input:-webkit-autofill {
     width: 50px;
     height: 50px;
 }
-
-
-
-
 .homeLogin {
     margin-top: 10px;
 }
@@ -248,4 +237,28 @@ input:-webkit-autofill {
 .important {
     border: 1px solid #aebd38;
     width: 200px;
+}
+.loginContent {
+    position: fixed;
+    z-index: 2;
+    right:-5px;
+    top: 64px;
+    background: #505160;
+    padding: 5px;
+    border-radius: 5px;
+    padding-right: 10px;
+    display: none;
+    color: #68829e;
+}
+
+#password {
+    width: 150px;
+}
+
+.sexy {
+    position: absolute;
+    height: 200px;
+    right: 30px;
+    bottom: 600px;
+    display: none;
 }

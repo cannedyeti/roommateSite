@@ -55,7 +55,7 @@ router.post("/signup2", function(req, res) {
             pets: req.body.pets,
             cleanliness: req.body.cleanliness,
             dob: req.body.dob,
-            smokes: req.body.smokes,
+            smoking: req.body.smokes,
             bio: req.body.bio,
             occupation: req.body.occupation
     }, {

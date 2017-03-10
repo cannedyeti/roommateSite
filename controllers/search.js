@@ -12,7 +12,6 @@ router.post("/", function(req, res) {
     db.user.findAll({
         where: {
             smokes: req.body.smoking,
-            priceRange: req.body.price,
             area: req.body.area.toLowerCase(),
             id: {
                 $notIn: [req.user.id]

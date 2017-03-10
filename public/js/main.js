@@ -14,7 +14,7 @@ $(function(){
 	});
 	setTimeout(function(){
 		$(".homeTitle").animate({
-			fontSize: "65px",
+			fontSize: "70px",
 			color: "rgb(80,81,96)",
 			backgroundColor: "rgba(0,0,0,0)",
 			marginTop: 0,
@@ -57,5 +57,41 @@ $(function(){
 			backgroundColor: "#c9c9c9"
 		}, 500);
 	})
+
+	$(".loginBtn").on("click", function(){
+		if ($(".loginContent").hasClass("fadeInDown")) {
+			$(".loginContent").toggleClass("fadeInDown");
+			$(".loginContent").toggleClass("fadeOutUp");
+			setTimeout(function(){
+				$(".loginContent").toggle()
+			}, 500)
+		} else if ($(".loginContent").hasClass("fadeOutUp")){
+			$(".loginContent").toggleClass("fadeOutUp");
+			$(".loginContent").toggleClass("fadeInDown");
+			setTimeout(function(){
+				$(".loginContent").toggle()
+			}, 500)
+		} else {
+			$(".loginContent").toggle();
+			$(".loginContent").toggleClass("fadeInDown");
+		}
+
+	});
+var moveSexy = function () {
+    
+    $('.sexy').css('left','-100px')
+               .animate({'left':$(window).width()},
+                        4000,
+                        'linear',
+                        function(){
+                            moveSexy();
+                        });
+};
+
+setTimeout(function(){
+	$(".sexy").toggle();
+	moveSexy();
+
+}, 5000)
 	
 });

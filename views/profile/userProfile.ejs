@@ -14,7 +14,9 @@
       <br>
       <div class="interests">
         <h4>Interested in:</h4>
-        <% user.interests %>
+        <% if (user.interests == 0) { %>
+          <h5><%= user.fname + user.lname %> has not added any interests.</h5>
+        <% } %>
           <% if (user.interests) { %>
             <% user.interests.forEach(function(interest) { %>
               <span class="btn btn-sm delete-int"><%= interest.interest %></span>
