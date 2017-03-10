@@ -52,6 +52,7 @@ body{
     border-color: #68829e;
     border: 2px solid;
     border-radius: 0;
+    outline: none;
 }
 
 .btnlight {
@@ -70,10 +71,20 @@ body{
 }
 
 .btngrey:hover {
+    outline: none;
     background: #68829e;
     color: #505160;
     border-color: #68829e;
 }
+.btngrey:active {
+    outline: none;
+    border-color: #68829e;
+    background: #505160;
+    color: #68829e;
+}
+/*focus :(*/
+
+
 
 .btnlight:hover {
     background: #68829e;
