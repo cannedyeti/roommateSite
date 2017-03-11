@@ -62,7 +62,9 @@ router.post("/signup2", function(req, res) {
         where: {email: req.user.email}
     }).then(function(updatedProfile) {
         res.redirect("/profile");
-    });
+    }).catch(function(err){
+        res.redirect("/auth/signup2");
+    })
 });
     
 
