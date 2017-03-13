@@ -46,6 +46,8 @@ By default all tables come with the following attributes:
 
 **Users Table**
 
+
+
 id   | username  | email | fname | lname | password | bio | area | smokes | priceRange | dob | gender | pets | cleanliness | occupation |
 
 ---- | --------- | ---    |  ---  | ---- | --------| --- | ---- | -----| ------- | -------| ----- | ----- | ------|  ------ |
@@ -54,6 +56,8 @@ id   | username  | email | fname | lname | password | bio | area | smokes | pric
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date | int | string | int | string
 
 **User Interests Table**
+
+
 id   | userId | interestId |
 ------ | ---      | ---    
 1| 1 | 1
@@ -61,6 +65,8 @@ id   | userId | interestId |
 1| 1 | 1
 
 **Interests Table**
+
+
 id   | interest| 
 | -------- | ---  
 1| dancing
