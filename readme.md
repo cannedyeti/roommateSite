@@ -61,8 +61,8 @@ id   | username  | email | fname | lname | password | bio | area | smokes | pric
 id   | userId | interestId |
 ------ | ---      | ---    
 1| 1 | 1
-1| 1 | 1
-1| 1 | 1
+2| 1 | 2
+3| 1 | 3
 
 **Interests Table**
 
@@ -70,13 +70,21 @@ id   | userId | interestId |
 id   | interest| 
 | -------- | ---  
 1| dancing
-1| dancing
-1| dancing
+2| chicken
+3| computers
+
+
+### User Stories
+
+1. Little Billy Macadoo is a new college student who wants to find a new roomate he will have something in common with so he is not forced to move in with a complete stranger.
+ 
+2. Nathaniel Hilcrest has an extra room and would like to get a room mate but he is not sure how to find someone he can trust not to break his glass doll collection. He hopes to fond someone with similar tastes so he may live happily.
+
+3. Sheri Maryweather Jr is looking to move to a new city for a new job but doesn't know anyone there. She is unsure how to find a roommate on her own.
 
 
 
-
-### Node Modules used
+### Node Modules Used
 
 >- express
 >- ejs
