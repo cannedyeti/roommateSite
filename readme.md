@@ -82,6 +82,8 @@ id   | interest|
 
 3. Sheri Maryweather Jr is looking to move to a new city for a new job but doesn't know anyone there. She is unsure how to find a roommate on her own.
 
+4. Denise Ortega is a mythical user looking to start a new boy band in the shire. She hopes to find fans of Gandalf, who preferably play the saxaphone so they may jam for hours on end without driving each other mad.
+
 
 
 ### Node Modules Used
