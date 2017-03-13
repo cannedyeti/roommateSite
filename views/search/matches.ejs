@@ -14,19 +14,24 @@
         </div>
         <% matches.forEach(function(t) { %>
         <div class="row results">
+            <% console.log(matches) %>
+            <% if (matches.length != 0) { %>
             <div class="col-xs-5">
                 <h3><%= t.fname %> <%= t.lname %></h3>
                 <h5><a href="/profile/<%= t.id %>"> View Profile</a></h5>
             </div>
-        <div class="col-xs-4">
-            <p><%= t.bio %></p>
-        </div>
-        <div class="col-xs-3">
-            <% t.interests.forEach(function(i) { %>
-                <span class="btn btn-success btn-xs"> <%= i.interest %></span>
-            <% }) %>
-        </div>
+            <div class="col-xs-4">
+                <p><%= t.bio %></p>
+            </div>
+            <div class="col-xs-3">
+                <% t.interests.forEach(function(i) { %>
+                    <span class="btn btn-success btn-xs"> <%= i.interest %></span>
+                <% }) %>
+            </div>
+            <%} else { %>
+                <h3>Sorry, no matches found in that city.</h3>
 
+            <% } %>
         <br>
         </div>
     <% }) %>
