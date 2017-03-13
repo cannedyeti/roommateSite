@@ -51,8 +51,8 @@ By default all tables come with the following attributes:
 id| username| email|fname|lname|password| bio| area | smokes | dob | gender | pets | cleanliness | occupation
 ---- | ----- | ----- |  ---  | ---- | ----- | -----| ---- | -------| ------- | ------ | ----- | ------- |  -----
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | date| int | string | int | string
-1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | date| int | string | int | string
-1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | date| int | string | int | string
+2    | User | test1@testing.com | John | Doe | (hashed) | string | seattle | 0 | 1990-09-21| 1 | none | 7 | unemployed
+3    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | date| int | string | int | string
 
 
 
