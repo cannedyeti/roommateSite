@@ -53,8 +53,11 @@ id   | username  | email | fname | lname | password | bio | area | smokes | pric
 ---- | --------- | ---    |  ---  | ---- | --------| --- | ---- | -----| ------- | -------| ----- | ----- | ------ |  -----
 
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date | int | string | int | string
+
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date | int | string | int | string
+
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date | int | string | int | string
+
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date | int | string | int | string
 
 **User Interests Table**
