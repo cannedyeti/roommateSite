@@ -48,9 +48,9 @@ By default all tables come with the following attributes:
 
 
 
-id   | username  | email            | fname | lname | password | bio   | area | smokes | priceRange | dob | gender | pets | cleanliness | occupation
+id| username| email|fname|lname|password| bio| area | smokes | priceRange | dob | gender | pets | cleanliness | occupation
 
----- | --------- | -------------- |  ---  | ---- | -------- | -------| ---- | -------| ---------- | ----| ------ | ----- | -------------- |  -----
+---- | ----- | ----- |  ---  | ---- | ----- | -----| ---- | -------| ------- | ----| ------ | ----- | ------- |  -----
 
 1    | Dude | test@testing.com | John | Doe | (hashed) | string | city | int | int | date| int | string | int | string
 
